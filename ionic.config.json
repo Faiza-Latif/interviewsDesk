@@ -1,0 +1,7 @@
+{
+  "name": "interviewsDesk",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

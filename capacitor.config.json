@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "interviewsDesk",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
