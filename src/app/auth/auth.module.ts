@@ -7,14 +7,20 @@ import { IonicModule } from '@ionic/angular';
 import { AuthPageRoutingModule } from './auth-routing.module';
 
 import { AuthPage } from './auth.page';
+import { LoginPageModule } from './login/login.module';
+import { SignupPageModule } from './signup/signup.module';
+import { ForgotPasswordPageModule } from './forgot-password/forgot-password.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AuthPageRoutingModule
+    AuthPageRoutingModule,
+    LoginPageModule,
+    SignupPageModule,
+    ForgotPasswordPageModule
   ],
-  declarations: [AuthPage]
+  declarations: [AuthPage],
 })
 export class AuthPageModule {}

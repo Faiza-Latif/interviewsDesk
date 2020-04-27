@@ -1,9 +1,50 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>signup</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/auth/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Signup</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-
+<ion-content>  
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <ion-col> 
+        <h3>text-center</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+      <ion-list>
+      <!-- ion-item can be used outside of an ion-list, with this two it will render some cool styles -->
+      <ion-item>
+        <ion-label position="floating"> Email </ion-label>
+        <ion-input ngModel name="email" type="email" required email #emailCtrl="ngModel"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched" lines="none">
+        <ion-label >Email invalid</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"> Password </ion-label>
+        <ion-input ngModel name="password"  type="password" minlength="6" required #passCtrl="ngModel"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!passCtrl.valid && passCtrl.touched" lines="none">
+        <ion-label >Password Invalid</ion-label>
+      </ion-item>
+    </ion-list>      
+   </ion-col>
+  </ion-row>
+  <ion-button ></ion-button>
+  <ion-item lines="none" routerDirection="forward"
+  [routerLink]="['/','auth','signup']">
+    <ion-label>Default Item</ion-label>
+  </ion-item>
+  <ion-row class="ion-text-center">
+    <ion-col> 
+      <h2>text-center</h2>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+  
+  
 </ion-content>
