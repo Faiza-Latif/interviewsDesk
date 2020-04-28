@@ -3,6 +3,9 @@
 
 /** Ionic CSS Variables **/
 :root {
+
+  --ion-font-family: 'BalooBhainaRegular';
+
   --ion-color-primary: #008080;
   --ion-color-primary-rgb: 0,128,128;
   --ion-color-primary-contrast: #ffffff;
@@ -71,6 +74,7 @@
   font-family: BalooBhainaRegular;
   src: url(src/assets/fonts/BalooBhaina2-Regular.ttf);
 }
+
 @font-face {
   font-family: BalooBhainaMedium;
   src: url(src/assets/fonts/BalooBhaina2-Medium.ttf);
