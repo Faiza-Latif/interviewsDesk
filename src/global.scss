@@ -25,9 +25,14 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+
+
+.semi-bold {
+   font-family: BalooBhainaSemiBold; ;
+}
 p.error {
     color: var(--ion-color-danger);
-    font-size: x-small;
+    font-size: small;
     font-family: BalooBhainaRegular;
 }
 
