@@ -24,3 +24,28 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+p.error {
+    color: var(--ion-color-danger);
+    font-size: x-small;
+    font-family: BalooBhainaRegular;
+}
+
+.danger {
+    color: var(--ion-color-danger);
+}
+
+.success {
+    color: var(--ion-color-success);
+}
+
+h1 {
+    color: var(--ion-color-primary);
+    font-family: BalooBhainaSemiBold;
+    font-size: xx-large;
+}
+
+h2 {
+    color: var(--ion-color-secondary);
+}
+

@@ -1,12 +1,12 @@
-<ion-content>
+<ion-content padding>
   <ion-grid>
     <ion-row class="ion-text-center">
-      <ion-col>
-        <h3>Interviews Desk</h3>
+      <ion-col size=12>
+        <h1 weight="bold">Interviews Desk</h1>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+      <ion-col class="ion-padding" size=12>
         <ion-list>
           <ion-item>
             <ion-label position="floating"> Email </ion-label>
@@ -19,9 +19,9 @@
               #emailCtrl="ngModel"
             ></ion-input>
           </ion-item>
-          <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched" lines="none">
-            <h5>Email invalid</h5>
-          </ion-item>
+          <p class="error" *ngIf="!emailCtrl.valid && emailCtrl.touched" lines="none">
+            Email invalid
+          </p>
           <ion-item>
             <ion-label position="floating"> Password </ion-label>
             <ion-input
@@ -33,13 +33,13 @@
               #passCtrl="ngModel"
             ></ion-input>
           </ion-item>
-          <ion-item *ngIf="!passCtrl.valid && passCtrl.touched" lines="none">
-            <h5>Password Invalid</h5>
-          </ion-item>
+          <p class="error" *ngIf="!passCtrl.valid && passCtrl.touched" lines="none">
+            Password Invalid
+          </p>
+          <ion-button type="submit" color="tertiary" fill="outline" expand="block" size="regular">Login</ion-button>
         </ion-list>
       </ion-col>
     </ion-row>
-    <ion-button fill="outline" expand="block" size="large">Login</ion-button>
     <ion-item
       lines="none"
       routerDirection="forward"
