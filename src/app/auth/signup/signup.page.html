@@ -6,45 +6,133 @@
     <ion-title>Signup</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>  
+<ion-content padding>
   <ion-grid>
     <ion-row class="ion-text-center">
-      <ion-col> 
-        <h3>text-center</h3>
+      <ion-col size="12">
+       <ion-card>
+        <ion-card-subtitle>My details</ion-card-subtitle>
+        <ion-card-title>Register</ion-card-title>
+       </ion-card>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-      <ion-list>
-      <!-- ion-item can be used outside of an ion-list, with this two it will render some cool styles -->
-      <ion-item>
-        <ion-label position="floating"> Email </ion-label>
-        <ion-input ngModel name="email" type="email" required email #emailCtrl="ngModel"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched" lines="none">
-        <ion-label >Email invalid</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating"> Password </ion-label>
-        <ion-input ngModel name="password"  type="password" minlength="6" required #passCtrl="ngModel"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="!passCtrl.valid && passCtrl.touched" lines="none">
-        <ion-label >Password Invalid</ion-label>
-      </ion-item>
-    </ion-list>      
-   </ion-col>
-  </ion-row>
-  <ion-button ></ion-button>
-  <ion-item lines="none" routerDirection="forward"
-  [routerLink]="['/','auth','signup']">
-    <ion-label>Default Item</ion-label>
-  </ion-item>
-  <ion-row class="ion-text-center">
-    <ion-col> 
-      <h2>text-center</h2>
-    </ion-col>
-  </ion-row>
+      <ion-col class="ion-no-padding ion-padding-horizontal" size="12">
+        <ion-list class="ion-no-padding">
+          <ion-item>
+            <ion-label position="floating">
+              First Name <span class="danger">*</span>
+            </ion-label>
+            <ion-input
+              ngModel
+              name="fname"
+              type="text"
+              required
+              minlength="2"
+              #fnameCtrl="ngModel"
+            ></ion-input>
+          </ion-item>
+          <p
+            class="error ion-padding-start"
+            *ngIf="!fnameCtrl.valid && fnameCtrl.touched"
+            lines="none"
+          >
+            This field is mandatory
+          </p>
+          <ion-item>
+            <ion-label position="floating">
+              Last Name <span class="danger">*</span>
+            </ion-label>
+            <ion-input
+              ngModel
+              name="lname"
+              type="text"
+              required
+              minlength="2"
+              #lnameCtrl="ngModel"
+            ></ion-input>
+          </ion-item>
+          <p
+            class="error ion-padding-start"
+            *ngIf="!lnameCtrl.valid && lnameCtrl.touched"
+            lines="none"
+          >
+            This field is mandatory
+          </p>
+          <ion-item>
+            <ion-label position="floating">
+              Email <span class="danger">*</span>
+            </ion-label>
+            <ion-input
+              ngModel
+              name="email"
+              type="email"
+              required
+              email
+              #emailCtrl="ngModel"
+            ></ion-input>
+          </ion-item>
+          <p
+            class="error ion-padding-start"
+            *ngIf="!emailCtrl.valid && emailCtrl.touched"
+            lines="none"
+          >
+            This field is mandatory
+          </p>
+          <ion-item>
+            <ion-label position="floating">
+              Password <span class="danger">*</span>
+            </ion-label>
+            <ion-input
+              ngModel
+              name="password"
+              type="password"
+              minlength="6"
+              required
+              #passCtrl="ngModel"
+            ></ion-input>
+          </ion-item>
+            <ion-item>
+            <ion-label position="floating">
+              Repeat Password <span class="danger">*</span>
+            </ion-label>
+            <ion-input
+              ngModel
+              name="repassword"
+              type="repassword"
+              minlength="6"
+              required
+              #repassCtrl="ngModel"
+            ></ion-input>
+          </ion-item>
+          <p
+            class="error ion-padding-start"
+            *ngIf="!passCtrl.valid && passCtrl.touched || !repassCtrl.valid && repassCtrl.touched"
+            lines="none"
+          >
+            Password Invalid
+          </p>
+          <ion-row>
+            <ion-col class="ion-padding-top ion-padding-horizontal">
+              <ion-button
+                type="submit"
+                color="secundary"
+                fill="outline"
+                expand="block"
+                size="regular"
+                >Sign up</ion-button
+              >
+            </ion-col>
+          </ion-row>
+        </ion-list>
+      </ion-col>
+    </ion-row>
   </ion-grid>
-  
-  
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <h6 class="ion-margin-horizontal">Already have an account? <span  routerDirection="forward"
+      [routerLink]="['/','auth','login']" class="semi-bold" style="text-decoration: underline">Login now!</span></h6>
+  </ion-toolbar>
+</ion-footer>
