@@ -1,4 +1,5 @@
 <ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <ion-grid>
     <ion-row class="ion-text-center">
       <ion-col size="12">
@@ -56,7 +57,8 @@
                 fill="outline"
                 expand="block"
                 size="regular"
-                >Login</ion-button
+                [disabled]="!f.valid">
+                Login</ion-button
               >
               <p
                
@@ -102,6 +104,7 @@
     </ion-col>
   </ion-row>
   </ion-grid>
+</form>
 </ion-content>
 
 <ion-footer>

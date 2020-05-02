@@ -7,12 +7,13 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
+  <form #f="ngForm">
   <ion-grid>
     <ion-row class="ion-text-center">
       <ion-col size="12">
        <ion-card>
-        <ion-card-subtitle>My details</ion-card-subtitle>
-        <ion-card-title>Register</ion-card-title>
+        <ion-card-subtitle>My details </ion-card-subtitle>
+        <ion-card-title>Register </ion-card-title>
        </ion-card>
       </ion-col>
     </ion-row>
@@ -120,6 +121,7 @@
                 fill="outline"
                 expand="block"
                 size="regular"
+                [disabled]="!f.valid">
                 >Sign up</ion-button
               >
             </ion-col>
@@ -128,11 +130,12 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+</form>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
     <h6 class="ion-margin-horizontal">Already have an account? <span  routerDirection="forward"
-      [routerLink]="['/','auth','login']" class="semi-bold" style="text-decoration: underline">Login now!</span></h6>
+      [routerLink]="['/','auth']" class="semi-bold" style="text-decoration: underline">Login now!</span></h6>
   </ion-toolbar>
 </ion-footer>
