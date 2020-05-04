@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { take, tap, switchMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import {  CanLoad, Route, UrlSegment, Router } from '@angular/router';
@@ -7,8 +8,12 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanLoad {
+  constructor(private authService: AuthService, private route: Router) {}
     canLoad(route: Route, segments: UrlSegment[]): boolean | Observable<boolean> | Promise<boolean> {
-        throw new Error("Method not implemented.");
+      if (!this.authService.userIsAuthenticated) {
+        this.route.navigate(['/' , 'auth']);
+      }
+        return this.authService.userIsAuthenticated;
     }
 
 

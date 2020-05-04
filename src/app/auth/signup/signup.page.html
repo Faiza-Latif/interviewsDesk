@@ -1,13 +1,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/auth/login"></ion-back-button>
+      <ion-back-button defaultHref="/auth"></ion-back-button>
     </ion-buttons>
     <ion-title>Signup</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <form #f="ngForm">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <ion-grid>
     <ion-row class="ion-text-center">
       <ion-col size="12">
@@ -100,7 +100,7 @@
             <ion-input
               ngModel
               name="repassword"
-              type="repassword"
+              type="password"
               minlength="6"
               required
               #repassCtrl="ngModel"
@@ -122,7 +122,7 @@
                 expand="block"
                 size="regular"
                 [disabled]="!f.valid">
-                >Sign up</ion-button
+                Sign up</ion-button
               >
             </ion-col>
           </ion-row>
