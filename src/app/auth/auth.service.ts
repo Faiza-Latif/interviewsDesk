@@ -13,22 +13,25 @@ import { environment } from './../../environments/environment';
       return this._userIsAuthenticated;
     }
     
+    set userIsAuthenticated(value: boolean) {
+       this._userIsAuthenticated = value;
+    }
     signup(email: string, password: string) {
       return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.API_KEY}`,
       {
         email,
         password,
         returnSecureToken: true
-      }).subscribe(data => console.log(data));
+      });
     }
 
     login(email: string, password: string) {
-      this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]`,
+      return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.API_KEY}`,
       {
         email,
         password,
         returnSecureToken: true
-      })
+      });
     }
     ngOnDestroy(): void {
         throw new Error("Method not implemented.");
