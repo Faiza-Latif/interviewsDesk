@@ -100,6 +100,7 @@
             <ion-input
               ngModel
               name="repassword"
+              [disabled]="!passCtrl.touched || (passCtrl.touched && !passCtrl.valid)"
               type="password"
               minlength="6"
               required
@@ -114,6 +115,16 @@
             Password Invalid
           </p>
           <ion-row>
+            <ion-col *ngIf="passCtrl.value !== repassCtrl.value">
+              <p
+              class="error ion-padding-start"
+              lines="none"
+            >
+              Passwords do not match!
+            </p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
             <ion-col class="ion-padding-top ion-padding-horizontal">
               <ion-button
                 type="submit"
@@ -121,7 +132,7 @@
                 fill="outline"
                 expand="block"
                 size="regular"
-                [disabled]="!f.valid">
+                [disabled]="!f.valid || (passCtrl.value != repassCtrl.value)">
                 Sign up</ion-button
               >
             </ion-col>
