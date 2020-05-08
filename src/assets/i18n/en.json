@@ -1,0 +1,24 @@
+{
+    "auth": {
+      "signup": "Sign up",
+      "login": "Login",
+      "login_options": "Other login options",
+      "register_now": "Register now!",
+      "register": "Register",
+      "details": "My details",
+      "login_now": "Login now!",
+      "has_account_question_negative": "Don't have an account yet?",
+      "has_account_question_positive": "Already have an account?",
+      "form" : {
+        "email": "Email",
+        "password": "Password",
+        "repeat_password": "Repeat Password",
+        "forgot_password": "Forgot password?",
+        "first_name": "First Name",
+        "last_name": "Last Name"
+      }
+    },
+    "EMAIL_NOT_FOUND": "E-mail could not be found",
+    "EMAIL_EXISTS": "The e-mail entered is already being used",
+    "INVALID_PASSWORD": "The password is invalid"
+  }
