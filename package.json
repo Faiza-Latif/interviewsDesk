@@ -27,6 +27,7 @@
     "@ngx-translate/core": "^12.1.2",
     "@ngx-translate/http-loader": "^4.0.0",
     "chart.js": "^2.9.3",
+    "cordova-plugin-facebook4": "^6.4.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
@@ -56,5 +57,13 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-facebook4": {
+        "APP_ID": "2718391401604379",
+        "APP_NAME": "Interviews Desk"
+      }
+    }
+  }
 }

@@ -1,7 +1,8 @@
 {
   "name": "interviewsDesk",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

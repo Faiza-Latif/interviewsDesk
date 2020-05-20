@@ -26,7 +26,6 @@ export class LoginPage implements OnInit {
     console.log(email, password);
     this.authService.login(email, password).subscribe(data => {
       console.log(data);
-      this.authService.userIsAuthenticated = true;
       this.router.navigateByUrl('/home');
     }, error => {
       this.showAlert(error.error.error.message);

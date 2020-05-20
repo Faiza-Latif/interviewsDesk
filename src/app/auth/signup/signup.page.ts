@@ -23,7 +23,7 @@ export class SignupPage implements OnInit {
     const email = f.value.email;
     const password = f.value.password;
     console.log(email, password);
-    this.authService.signup(email, password).subscribe(data => {}, error => {       
+    this.authService.signup(email, password).subscribe(data => {}, error => {
       this.showAlert(error.error.error.message);
     });
   }
