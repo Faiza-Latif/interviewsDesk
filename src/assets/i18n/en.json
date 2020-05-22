@@ -18,6 +18,10 @@
         "last_name": "Last Name"
       }
     },
+    "home": {
+      "app_title": "Interviews Desk",
+      "app_personal_title": "My Desk"
+    },
     "EMAIL_NOT_FOUND": "E-mail could not be found",
     "EMAIL_EXISTS": "The e-mail entered is already being used",
     "INVALID_PASSWORD": "The password is invalid"

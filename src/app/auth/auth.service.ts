@@ -1,13 +1,13 @@
-import { Auth } from "./auth.model";
-import { OnDestroy, Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { environment } from "./../../environments/environment";
-import { BehaviorSubject, from, Observable } from "rxjs";
-import { map, tap, take } from "rxjs/operators";
-import { Plugins } from "@capacitor/core";
+import { Auth } from './auth.model';
+import { OnDestroy, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from './../../environments/environment';
+import { BehaviorSubject, from, Observable } from 'rxjs';
+import { map, tap, take } from 'rxjs/operators';
+import { Plugins } from '@capacitor/core';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class AuthService implements OnDestroy {
   constructor(private http: HttpClient) {}
@@ -79,7 +79,7 @@ export class AuthService implements OnDestroy {
   logout() {
     this._token.next(null);
     // clear data from storage
-    Plugins.Storage.remove({ key: "authData" });
+    Plugins.Storage.remove({ key: 'authData' });
   }
 
   private storeAuthData(
@@ -89,13 +89,13 @@ export class AuthService implements OnDestroy {
     email: string
   ) {
     const data = JSON.stringify({ userId, token, tokenExpirationData, email });
-    Plugins.Storage.set({ key: "authData", value: data });
+    Plugins.Storage.set({ key: 'authData', value: data });
   }
 
   autoLogin() {
     // Plugins.Storage.get({key: 'authData'}) returns a promise --> to transform to observable wrap with from()
     let parsedData;
-    return from(Plugins.Storage.get({ key: "authData" })).pipe(
+    return from(Plugins.Storage.get({ key: 'authData' })).pipe(
       take(1),
       map((storedData) => {
         if (!storedData || storedData.value == null) {
@@ -135,6 +135,6 @@ export class AuthService implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    throw new Error("Method not implemented.");
+    throw new Error('Method not implemented.');
   }
 }
