@@ -22,6 +22,14 @@
       "app_title": "Interviews Desk",
       "app_personal_title": "My Desk"
     },
+    "account" : {
+      "title": "Account",
+      "subtitle":""
+    },
+    "settings" : {
+      "title": "Settings",
+      "subtitle":""
+    },
     "EMAIL_NOT_FOUND": "E-mail could not be found",
     "EMAIL_EXISTS": "The e-mail entered is already being used",
     "INVALID_PASSWORD": "The password is invalid"

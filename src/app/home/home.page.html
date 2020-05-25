@@ -2,20 +2,40 @@
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button auto-hide="false"></ion-menu-button>
-      </ion-buttons>
-      <ion-buttons slot="primary">
         <ion-button>
-          <ion-icon slot="icon-only" md="ellipsis-vertical"></ion-icon>
+          <ion-icon slot="icon-only" name="desktop-outline"></ion-icon>
         </ion-button>
       </ion-buttons>
+     
 
-      <ion-title>{{ 'home.app_personal_title' | translate}} </ion-title>
+      <ion-title>{{ 'home.app_personal_title' | translate}} 
+      </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+  <ion-item lines="none">
+    <ion-label>
+      ADD STUFF
+    </ion-label>
+  </ion-item>
+<ion-reorder-group (ionItemReorder)="doReorder($event)" disabled="false">
+  <!-- Items wrapped in a reorder, entire item can be dragged -->
+  <ion-reorder>
+    <ion-item>
+      <ion-label>
+        Item 7
+      </ion-label>
+    </ion-item>
+  </ion-reorder>
+
+  <ion-reorder>
+    <ion-item>
+      <ion-label>
+        Item 8
+      </ion-label>
+    </ion-item>
+  </ion-reorder>
+</ion-reorder-group>
 </ion-content>
