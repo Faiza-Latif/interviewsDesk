@@ -26,6 +26,12 @@
   text-decoration: none;
 }
 
+.popup {
+  --max-height: 500px !important;
+  --max-width: 500px !important;
+}
+
 ion-content ion-toolbar {
   --background: translucent;
 }
+

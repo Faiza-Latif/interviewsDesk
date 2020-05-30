@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import { JobAppCreationComponent } from './job-app-creation/job-app-creation.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, JobAppCreationComponent],
+  entryComponents: [JobAppCreationComponent]
 })
 export class HomePageModule {}

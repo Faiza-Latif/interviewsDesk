@@ -32,5 +32,6 @@
     },
     "EMAIL_NOT_FOUND": "E-mail could not be found",
     "EMAIL_EXISTS": "The e-mail entered is already being used",
-    "INVALID_PASSWORD": "The password is invalid"
+    "INVALID_PASSWORD": "The password is invalid",
+    "INVALID_LABEL": "The password is invalid"
   }
