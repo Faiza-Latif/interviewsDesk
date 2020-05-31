@@ -1,13 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ 'home.jobApp' | translate}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   
+  </ion-toolbar>
+</ion-header>
 <ion-content padding>
   <form #f="ngForm">
   <ion-grid>
-    <ion-row class="ion-text-center">
-      <ion-col size="12" >
-        <h1 weight="bold" style="margin-bottom: 0;"> {{ 'home.app_title' | translate}}</h1>
-      </ion-col>
-    </ion-row>
     <ion-row>
-      <ion-col class="ion-no-padding ion-padding-horizontal" size="12" size-sm=8 offset-sm=2>
+      <ion-col class="ion-no-padding ion-padding-horizontal" size="12" size-sm=12>
         <ion-list class="ion-no-padding">
           <ion-item>
             <ion-label position="floating">
@@ -25,8 +31,9 @@
             class="error ion-padding-start"
             *ngIf="!labelCtrl.valid && labelCtrl.touched"
             lines="none"
+            style="margin-bottom: 0;"
           >
-            {{'INVALID_LABEL' | translate}}
+            {{'FIELD_MANDATORY' | translate}}
           </p>
           <ion-item>
             <ion-label position="floating">
@@ -36,11 +43,42 @@
               ngModel
               name="company"
               type="text"
-              required
               #companyCtrl="ngModel"
             ></ion-input>
           </ion-item>
-          
+          <ion-item>
+            <ion-label position="floating">
+              {{ 'interviewer' | translate}} 
+            </ion-label>
+            <ion-input
+              ngModel
+              name="company"
+              type="text"
+              #companyCtrl="ngModel"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">
+              {{ 'description' | translate}} 
+            </ion-label>
+            <ion-textarea
+              ngModel
+              name="description"
+              type="text"
+              #descriptionCtrl="ngModel"
+            ></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">
+              {{ 'status' | translate}} 
+            </ion-label>
+            <ion-input
+              ngModel
+              name="status"
+              type="text"
+              #statusCtrl="ngModel"
+            ></ion-input>
+          </ion-item>
           <ion-row>
             <ion-col class="ion-padding-top ion-padding-horizontal">
               <ion-button
@@ -48,9 +86,21 @@
                 color="secundary"
                 fill="outline"
                 expand="block"
+                (click)="onAdd()"
                 size="regular"
                 [disabled]="!f.valid">
                 {{ 'add' | translate | uppercase }}
+                </ion-button
+              >
+            </ion-col>
+            <ion-col class="ion-padding-top ion-padding-horizontal">
+              <ion-button
+                color="secundary"
+                fill="clear"
+                expand="block"
+                (click)="onCancel()"
+                size="regular">
+                {{ 'cancel' | translate | uppercase }}
                 </ion-button
               >
             </ion-col>

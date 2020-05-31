@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-job-app-creation',
@@ -7,13 +8,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class JobAppCreationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController) { }
 
     // Data passed in by componentProps
     @Input() firstName: string;
     @Input() lastName: string;
     @Input() middleInitial: string;
-  
+
   ngOnInit() {}
 
+  onCancel() {
+    this.modalCtrl.dismiss(null, 'cancel');
+  }
+
+  onAdd() {
+    this.modalCtrl.dismiss('hello', 'create');
+  }
 }
