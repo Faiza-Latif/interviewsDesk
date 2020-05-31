@@ -52,6 +52,7 @@ export class HomePage implements OnInit {
         middleInitial: "N",
       },
       showBackdrop: true,
+      backdropDismiss: false,
     }).then((modalEl) => {
       modalEl.present();
       return modalEl.onWillDismiss();

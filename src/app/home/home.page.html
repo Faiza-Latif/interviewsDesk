@@ -16,7 +16,7 @@
 <ion-content>
   <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
  <ion-item lines="none">
-        <ion-buttons slot="start" style="margin: 0">
+        <ion-buttons  slot="start" style="margin: 0">
          <ion-button color="primary" (click)="addJobApplication()">
             <ion-icon slot="icon-only" name="add" ></ion-icon>
           </ion-button>
@@ -31,6 +31,10 @@
         <div> {{item.label}} - {{item.companyName}} </div>
         <div style="font-size:small"> {{item.interviewer}} - {{item.description}} </div>
       </ion-label>
+      <ion-buttons class="body-buttons" slot="end">
+            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+            <ion-icon slot="icon-only"  name="clipboard-outline"></ion-icon>
+      </ion-buttons>
     </ion-item>
   </ion-reorder>
 

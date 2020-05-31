@@ -35,3 +35,16 @@ ion-content ion-toolbar {
   --background: translucent;
 }
 
+ion-buttons.body-buttons {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: space-around !important;
+  height: 80% !important;
+  
+}
+
+ion-buttons.body-buttons ion-icon {
+  font-size: 1em !important;
+  justify-content: space-evenly !important;
+  cursor: pointer;
+}
