@@ -26,7 +26,7 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 ion-modal.popup {
-    --max-height: 640px !important;
+    --max-height: 540px !important;
     --max-width: 500px !important;
   }
 
@@ -60,3 +60,8 @@ h2 {
     color: var(--ion-color-secondary);
 }
 
+.action-button {
+    cursor: pointer;
+    --ion-safe-area-right: 0;
+    --ion-safe-area-left: 0;
+}

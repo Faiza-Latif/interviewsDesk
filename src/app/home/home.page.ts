@@ -27,9 +27,35 @@ export class HomePage implements OnInit {
         interviewer: "string",
       },
       {
-        label: "ll",
+        label: "AMA",
+        companyName: "agap",
+        state: "a",
+        description: "projectNearshore, description.",
+        interviewer: "stanaring",
+      },
+      {
+        label: "string",
+        companyName: "ststingring",
+        interviewer: "paulo",
+      },
+      {
+        label: "trind",
+        companyName: "trind",
+        state: "initial",
+      },
+      {
+        label: "string",
+      },
+      {
+        label: "string",
         companyName: "string",
-        state: "string",
+        state: "cool",
+        interviewer: "string",
+      },
+      {
+        label: "string",
+        companyName: "string",
+        state: "cool",
         description: "string",
         interviewer: "string",
       },

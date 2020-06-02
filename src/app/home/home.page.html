@@ -15,28 +15,40 @@
 
 <ion-content>
   <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
- <ion-item lines="none">
-        <ion-buttons  slot="start" style="margin: 0">
-         <ion-button color="primary" (click)="addJobApplication()">
-            <ion-icon slot="icon-only" name="add" ></ion-icon>
-          </ion-button>
-        </ion-buttons>
-        <ion-label >Add Job Application</ion-label>
-    </ion-item>
-<ion-reorder-group (ionItemReorder)="doReorder($event)" disabled="false">
-  <!-- Items wrapped in a reorder, entire item can be dragged -->
-  <ion-reorder *ngFor="let item of jobApplications; index as i;">
-    <ion-item >
-      <ion-label>
-        <div> {{item.label}} - {{item.companyName}} </div>
-        <div style="font-size:small"> {{item.interviewer}} - {{item.description}} </div>
-      </ion-label>
-      <ion-buttons class="body-buttons" slot="end">
-            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
-            <ion-icon slot="icon-only"  name="clipboard-outline"></ion-icon>
-      </ion-buttons>
-    </ion-item>
-  </ion-reorder>
+  <ion-grid>
+<ion-row>
+  <ion-col style="padding:0" size=12>
+    <ion-item lines="none" class="action-button">
+           <ion-buttons start   (click)="addJobApplication()">
+            <ion-button    color="primary">
+               <ion-icon slot="icon-only" name="add" ></ion-icon>
+              </ion-button>
+              <ion-label   color="primary" >Add Job Application</ion-label>
+           </ion-buttons>
+       </ion-item>
 
-</ion-reorder-group>
+  </ion-col>
+</ion-row>
+<ion-row >
+  <ion-col size=12 size-md=6 offset-md=3>
+    <ion-reorder-group (ionItemReorder)="doReorder($event)" disabled="false">
+      <!-- Items wrapped in a reorder, entire item can be dragged -->
+      <ion-reorder *ngFor="let item of jobApplications; index as i;">
+        <ion-item >
+          <ion-label>
+            <div> {{item.label}} <span *ngIf="item.companyName">-</span> {{item.companyName}} </div>
+            <div style="font-size:small"> {{item.interviewer}} <span *ngIf="item.interviewer && item.description">-</span> {{item.description}} </div>
+          </ion-label>
+          <ion-buttons class="body-buttons" slot="end">
+                <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+                <ion-icon slot="icon-only"  name="clipboard-outline"></ion-icon>
+          </ion-buttons>
+        </ion-item>
+      </ion-reorder>
+    
+    </ion-reorder-group>
+
+  </ion-col>
+</ion-row>
+</ion-grid>
 </ion-content>
